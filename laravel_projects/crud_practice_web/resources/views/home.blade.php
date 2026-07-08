@@ -27,8 +27,10 @@
         <h2>All Posts</h2>
         @foreach($posts as $post)
         <div style="background-color: gray; padding: 10px; margin: 10px;">
-            <h3>{{$post['title']}}</h3>
+            <h2>{{$post['title']}}</h2>
             {{$post['body']}}
+            <h4>by {{$post->user->name}} created at {{$post->created_at}}</h4>
+            <h4>last update {{$post->updated_at}}</h4>
             <p><a href="/edit-post/{{$post->id}}">Edit post</a></p>
             <form action="/delete-post/{{$post->id}}" method="POST">
                 @method('DELETE')
