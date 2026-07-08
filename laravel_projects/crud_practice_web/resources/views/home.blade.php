@@ -12,6 +12,16 @@
     <form action="/logout" method="POST">
         <button>LOGOUT</button>
     </form>
+    <div style="border: 3px solid black;">
+        <h2>create new post</h2>
+        <form action="/create-post" method="POST" placeholder="post title">
+            <input type="text" name = "title">
+            <textarea name="body" placeholder="post something!"></textarea>
+            <button>Save Post</button>
+        </form>
+    </div>
+
+
     @else
 
     <div style="border: 3px solid black;">
