@@ -7,7 +7,10 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 
 Route::get('/', function () {
-    $posts = Post::all();
+    $posts = [];
+    if (auth()->check()) {
+        $posts = auth()->user()->userCoolPosts()->latest()->get();
+    }
     return view('home', ['posts' => $posts]);
 });
 
